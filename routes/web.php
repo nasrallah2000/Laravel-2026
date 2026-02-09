@@ -19,4 +19,7 @@ Route::prefix('forms')->name('forms.')->controller(FormController::class)->group
 
     Route::get('form2','form2')->name('form2');
     Route::post('form2','form2_data')->name('form2');
+
+    Route::get('form3','form3')->name('form3');
+    Route::post('form3','form3_data')->name('form3');
 });

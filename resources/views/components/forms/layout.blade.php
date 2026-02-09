@@ -30,6 +30,10 @@
                             <a class="nav-link {{ request()->routeIs('forms.form2') ? 'active' : '' }}"
                                 href="{{ route('forms.form2') }}">Form 2</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('forms.form3') ? 'active' : '' }}"
+                                href="{{ route('forms.form3') }}">Form 3</a>
+                        </li>
                     </ul>
                 </div>
             </div>
