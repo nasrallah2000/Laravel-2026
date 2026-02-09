@@ -16,4 +16,7 @@ Route::prefix('user')->name('user.')->controller(AppController::class)->group(fu
 Route::prefix('forms')->name('forms.')->controller(FormController::class)->group(function () {
     Route::get('form1','form1')->name('form1');
     Route::post('form1','form1_data')->name('form1');
+
+    Route::get('form2','form2')->name('form2');
+    Route::post('form2','form2_data')->name('form2');
 });
