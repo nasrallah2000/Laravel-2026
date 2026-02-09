@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Form3Request;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -33,15 +34,9 @@ class FormController extends Controller
         return view('forms.form3');
     }
 
-    public function form3_data(Request $request)
+    public function form3_data(Form3Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'password' => 'required | confirmed',
-        ]);
-        dd($request->all());
-        return "Welcome $name";
+        dd($request->validated());
+        return "Welcome $request->name";
     }
 }
