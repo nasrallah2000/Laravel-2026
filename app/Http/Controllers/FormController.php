@@ -39,4 +39,18 @@ class FormController extends Controller
         dd($request->validated());
         return "Welcome $request->name";
     }
+
+    public function form4()
+    {
+        return view('forms.form4');
+    }
+
+    public function form4_data(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $path =    $request->file('image')->store('uploads', 'custom');
+        }
+
+        return view('forms.form4_show', compact('path'));
+    }
 }

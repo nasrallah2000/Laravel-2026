@@ -22,4 +22,7 @@ Route::prefix('forms')->name('forms.')->controller(FormController::class)->group
 
     Route::get('form3','form3')->name('form3');
     Route::post('form3','form3_data')->name('form3');
+
+    Route::get('form4','form4')->name('form4');
+    Route::post('form4','form4_data')->name('form4');
 });
