@@ -6,4 +6,5 @@ return [
     'fr2' => 'Form 2',
     'fr3' => 'Form 3',
     'fr4' => 'Form 4',
+    'lang'=>'Languges'
 ];

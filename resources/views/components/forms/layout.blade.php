@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav {{ app()->getLocale() == 'ar' ? 'me-auto': 'ms-auto'}}">
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form1') ? 'active' : '' }}"
                                 aria-current="page" href="{{ route('forms.form1') }}">{{ __('custom.fr1') }}</a>
@@ -32,12 +32,26 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form3') ? 'active' : '' }}"
-                                href="{{ route('forms.form3') }}">{{  __('custom.fr3') }}</a>
+                                href="{{ route('forms.form3') }}">{{ __('custom.fr3') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form4') ? 'active' : '' }}"
-                                href="{{ route('forms.form4') }}">{{  __('custom.fr4')  }}</a>
+                                href="{{ route('forms.form4') }}">{{ __('custom.fr4') }}</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ __('custom.lang') }} {{ app()->getLocale() }}
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach (config('app.languages') as $code => $lang)
+                                <li><a class="dropdown-item" href="{{request()->url()}}?lang={{$code}}">{{ $lang
+                                        }}</a></li>
+                                @endforeach
+
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -54,6 +68,8 @@
         <p class="text-center m-0">All copyright reserved to Abo Omar <i class="far fa-copyright"></i> {{ date('Y') }}
         </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 </body>
 
 </html>
