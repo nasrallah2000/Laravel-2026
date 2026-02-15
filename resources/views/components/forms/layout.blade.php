@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getlocale() }}" dir="{{ app()->getlocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
-                <a class="navbar-brand" href="#">Form</a>
+                <a class="navbar-brand" href="#">{{ __('custom.fr') }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,19 +24,19 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form1') ? 'active' : '' }}"
-                                aria-current="page" href="{{ route('forms.form1') }}">Form 1</a>
+                                aria-current="page" href="{{ route('forms.form1') }}">{{ __('custom.fr1') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form2') ? 'active' : '' }}"
-                                href="{{ route('forms.form2') }}">Form 2</a>
+                                href="{{ route('forms.form2') }}">{{ __('custom.fr2') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form3') ? 'active' : '' }}"
-                                href="{{ route('forms.form3') }}">Form 3</a>
+                                href="{{ route('forms.form3') }}">{{  __('custom.fr3') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('forms.form4') ? 'active' : '' }}"
-                                href="{{ route('forms.form4') }}">Form 4</a>
+                                href="{{ route('forms.form4') }}">{{  __('custom.fr4')  }}</a>
                         </li>
                     </ul>
                 </div>
